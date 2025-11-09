@@ -1,0 +1,13 @@
+services:
+  app:
+    tty: false
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    develop:
+      watch:
+        - action: rebuild
+          path: ./app
+          target: ./
+          initial_sync: true
+    command: ./app
